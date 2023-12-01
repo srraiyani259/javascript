@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <center>
+        <br>
+        <label for="">Enter weight</label>
+        <input type="text" name="" id="inp-1"><br>
+        <label for="">Enter height</label>
+        <input type="text" name="" id="inp-2">
+        <br>
+
+        <h1 id="ans"></h1>
+    </center>
+</body>
+</html>
+
+<script>
+    let weight = document.getElementById("inp-1").value
+    let height = document.getElementById("inp-2").value
+
+    let BMI = weight/(height*height)
+
+    if(height == "" && weight == "")
+    {
+        document.getElementById("ans").innerText = ""
+    }
+    else
+    {
+        if(BMI < 18.5)
+        {
+            document.getElementById("ans").innerText = "underweight"
+        }
+        else if(BMI >= 18.5 && BMI <= 24.9)
+        {
+            document.getElementById("ans").innerText = "normal"
+        }
+        else if(BMI >= 25 && BMI <= 29.9)
+        {
+            document.getElementById("ans").innerText = "overweight"
+        }
+        else
+        {
+            document.getElementById("ans").innerText = "obesity"
+        }
+    }
+</script>
