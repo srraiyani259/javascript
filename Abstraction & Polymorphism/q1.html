@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+    class shape{
+        calculateArea(){
+            return "area..."
+        }
+    }
+    class Circle extends shape{
+        calculateArea(r){
+            let pie = 3.14
+            return "Area of circle = "+(2 * +pie * +r)
+        }
+    }
+    class Rectangle extends shape{
+        calculateArea(l,b){
+            return "Area of Rectangle = "+ +l * +b
+        }
+    }
+    class Square extends shape{
+        calculateArea(l){
+            return "Area of Square = "+ +l * +l
+        }
+    }
+    const circle1 =new Circle
+    console.log(circle1.calculateArea(6))
+
+    const rectangle1 =new Rectangle
+    console.log(rectangle1.calculateArea(5,5))
+
+    const square1 =new Square
+    console.log(square1.calculateArea(10))
+</script>

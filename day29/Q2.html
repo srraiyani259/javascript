@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+
+<script>
+
+    function strcheck(str){
+        if(str===" ")
+        {
+            throw new Error("String must contain some characters")
+        }
+        else
+        {
+            console.log("Successfull !",str)
+        }
+    }
+
+    try
+    {
+        strcheck(" ")
+    }
+    catch(sr)
+    {
+        console.log("Error : ",sr.message)
+    }
+
+</script>

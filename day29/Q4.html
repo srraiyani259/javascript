@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+
+<script>
+
+    function checkdiv(num1,num2){
+        if(num2 <= 0)
+        {
+            throw new Error("Number not divisible by 0")
+        }
+        else
+        {
+            console.log("Division :",num1/num2)
+        }
+    }
+
+    try
+    {
+        checkdiv(10,0)
+    }
+    catch(sr)
+    {
+        console.log("Error : ",sr.message)
+    }
+
+</script>

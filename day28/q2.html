@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Age Check</title>
+</head>
+<body>
+    <center>
+    <label for="">Enter your age:</label>
+    <input type="text" id="in1">
+    <br><br>
+    <p id="ans"></p>
+    <br><br>
+    <hr>
+
+    <button onclick="checkAge()">Check Age</button>
+
+</center>
+
+</body>
+</html>
+
+<script>
+    function checkAge()
+    {
+        let age = document.getElementById("in1").value;
+        age = parseInt(age);
+
+        if(age == "")
+        {
+            document.getElementById("ans").innerHTML = "Enter Valid Age"
+        }
+        else
+        {
+            if(age === 18)
+            {
+                document.getElementById("ans").innerHTML = "You are just old enough to drive in India!"
+            }
+            else if(age > 18)
+            {
+                document.getElementById("ans").innerHTML = "You can drive in India!"
+            }
+            else
+            {
+                document.getElementById("ans").innerHTML = "You can't drive in India"
+            }
+        }
+    }
+</script>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title> 1 </title>
+</head>
+<body>
+<center>
+	<label>Enter Unit : </label>
+	<input type="text" id="i1"><br>
+	<h1 id="ans"></h1>
+</center>
+</body>
+</html>
+<script>
+var totalunits = document.getElementById("i1").value
+var rate1 = 1;  
+var rate2 = 2; 
+var rate3 = 3; 
+var totalBill = 0;
+
+if(totalunits == "")
+{
+    document.getElementById("ans").innerHTML = "";
+}
+else{
+    if (totalunits <= 100) {
+        totalBill = totalunits * rate1;
+    } else if (totalunits <= 200) {
+        totalBill = 100 * rate1 + (totalunits - 100) * rate2;
+    } else {
+        totalBill = 100 * rate1 + 100 * rate2 + (totalunits - 200) * rate3;
+    }
+}
+
+document.getElementById("ans").innerHTML = totalBill;
+
+</script>

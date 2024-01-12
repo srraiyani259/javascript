@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+    class Food{
+        cook(){
+            return "method of cooking..."
+        }
+    }
+    class pizza extends Food{
+        cook(){
+            return "Italian origin"
+        }
+    }
+    class Sushi extends Food{
+        cook(){
+            return "Japanese cuisine"
+        }
+    }
+    class Burger extends Food{
+        cook(){
+            return "American cuisine"
+        }
+    }
+    const  Italian = new pizza
+    const  Japanese = new Sushi
+    const  American = new Burger
+    console.log(Italian.cook())
+    console.log(Japanese.cook())
+    console.log(American.cook())
+</script>

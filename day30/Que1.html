@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <center>
+        <form action="" id="signup">
+            <label for="">User Name :</label>
+            <input type="text" name="" id="nm"><br><br><br>
+            <label for="">Password :</label>
+            <input type="password" name="" id="pwd"><br><br><br>
+            <label for="">Confirm Password :</label>
+            <input type="password" name="" id="pwd2"><br><br><br>
+            <label for="">E-mail :</label>
+            <input type="email" id="em"><br><br><br>
+            <label for="">Phone Number :</label>
+            <input type="number" name="" id="pn"><br><br><br>
+
+            <button id="sumbit">Sumbit</button><br><br>
+
+            <span id="err"></span>
+        </form>
+    </center>
+</body>
+</html>
+
+<script>
+
+    document.getElementById("signup").onsubmit = function(event)
+    {
+        try
+        {
+            var name = document.getElementById("nm").value
+            var password = document.getElementById("pwd").value
+            var confirm = document.getElementById("pwd2").value
+            var email = document.getElementById("em").value
+            var number = document.getElementById("pn").value
+
+            if(/\d/.test(name))
+            {
+                throw new Error("Invalid Name")
+            }
+            if(password != confirm)
+            {
+                throw new Error("Incorrect Password")
+            }
+            if(!/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/.test(email))
+            {
+                throw new Error("Invalid Email")
+            }
+            if(!/^\d{10}$/.test(number))
+            {
+                throw new Error("Invalid Mobile Number")
+            }
+
+            alert("Successfull !")
+        }
+
+        catch(error)
+        {
+            event.preventDefault()
+            document.getElementById("err").innerText = error.message
+        }
+    }
+
+</script>

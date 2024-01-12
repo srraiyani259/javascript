@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+</head>
+<body>
+   <center>
+        <form action="" id="myform">
+            <label for="">Enter Name :</label><br>
+            <input type="text" name="" id="name"><br><br>
+            <label for="">Enter Email :</label><br>
+            <input type="email" name="" id="mail"><br><br>
+            <label for="">Enter Number :</label><br>
+            <input type="text" name="" id="num"><br><br>
+            <label for="">Password :</label><br>
+            <input type="password" name="" id="pwd"><br><br>
+            <label for="">Confirm Password :</label><br>
+            <input type="password" name="" id="cpwd"><br><br>
+
+            <button type="submit" style="padding: 10px;">Submit</button>
+        </form>
+   </center>
+</body>
+</html>
+
+<script>
+
+    $(document).ready(function(){
+        isValid = true
+
+        $("#myform").submit(function(em){
+            var name = $("#name").val();
+            if(name === "")
+            {
+                isValid = false;
+                alert("Enter your name")
+            }
+
+            var email = $("#mail").val();
+            if(email === "")
+            {
+                isValid = false;
+                alert("Enter your email address")
+            }
+            else if(!email.endwith("@gamil.com"))
+            {
+                isValid = false;
+                alert("Invalid ending of email")
+            }
+
+            var mobile = $("#num").val();
+            var phnrgx = /^\d{10}$/
+            if(mobile === "" || !phnrgx.test(mobile))
+            {
+                isValid = false;
+                alert("Enter Valid Number")
+            }
+
+            var pass = $("#pwd").val();
+            var cpass = $("#cpwd").val();
+            if(pass != cpass)
+            {
+                isValid = false;
+                alert("Enter Valid Password")
+            }
+        })
+    })
+
+</script>

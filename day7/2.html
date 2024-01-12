@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <center>
+
+        <label for="">Enter your age</label>
+        <input type="text" id="inp-1">
+
+        <h1 id="ans"></h1>
+
+    </center>
+</body>
+</html>
+
+<script>
+
+    let age = document.getElementById("inp-1").value
+
+    if(age == "")
+    {
+        document.getElementById("ans").innerText = ""
+    }
+    else
+    {
+        if(age < 18)
+        {
+            document.getElementById("ans").innerText = "Person is minor"
+        }
+        else if(age > 18 && age < 65)
+        {
+            document.getElementById("ans").innerText = "Person is older"
+        }
+        else
+        {
+            document.getElementById("ans").innerText = "Person is senior citizen"
+        }
+    }
+
+</script>
