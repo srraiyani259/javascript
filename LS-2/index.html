@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+
+        #img{
+            height: 200px;
+            width: 200px;
+        }
+
+        #main{
+            display: grid;
+            grid-template-columns: repeat(4 , 1fr);
+        }
+
+    </style>
+</head>
+<body>
+    <center>
+    <div id="main"></div>
+    </center>
+</body>
+</html>
+
+<script>
+
+    let data = [
+
+        {
+            id : 1,
+            title : "Ambedkar A Life  (English, Hardcover, Tharoor Shashi)",
+            price : 450,
+            image : "https://rukminim2.flixcart.com/image/832/832/xif0q/book/b/x/j/ambedkar-a-life-original-imagjzv9yz2ds9t3.jpeg?q=70&crop=false"
+        },
+
+        {
+            id : 2,
+            title : "A Brief History of Modern India  (English, Paperback, Ahir Rajiv)",
+            price : 330,
+            image : "https://rukminim2.flixcart.com/image/832/832/kikluvk0-0/book/h/o/w/a-brief-history-of-modern-indian-original-imafyby8sfza8efw.jpeg?q=70&crop=false"
+        },
+
+        {
+            id : 3,
+            title : "The Scientific Indian  (English, Paperback, Abdul Kalam A. P. J.)",
+            price : 292,
+            image : "https://rukminim2.flixcart.com/image/832/832/jph83gw0/book/8/7/6/the-scientific-indian-original-imafbp53htmv4w2g.jpeg?q=70&crop=false"
+        },
+
+        {
+            id : 4,
+            title : "The Man Who Saved India  (English, Hardcover, Sengupta Hindol)",
+            price : 801,
+            image : "https://rukminim2.flixcart.com/image/832/832/kidgnm80-0/book/k/j/l/the-man-who-saved-india-original-imafy6yy8aztahwa.jpeg?q=70&crop=false"
+        }
+    ]
+
+    function displayData(data){
+        data.map((el)=>{
+            let div = document.createElement("div")
+
+            let photo = document.createElement("img")
+            photo.setAttribute("src",el.image)
+            photo.setAttribute("id","img")
+
+            let nm = document.createElement("h3")
+            nm.innerText = el.title
+
+            let mn = document.createElement("h2")
+            mn.innerText = "₹ "+el.price
+
+            let btn = document.createElement("button")
+            btn.innerHTML = "ADD TO CART"
+
+            div.append(photo , nm , mn , btn)
+            document.querySelector("#main").append(div)
+        })
+    }
+
+    displayData(data)
+</script>
